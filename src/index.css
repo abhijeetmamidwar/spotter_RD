@@ -1630,3 +1630,174 @@ input {
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  animation: slideDown 0.3s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .search-hero {
+    padding: 4rem 0 2rem;
+  }
+  .destinations-section, .features-section {
+    padding: 2rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  .search-container {
+    padding: 1rem;
+  }
+  .filter-sidebar {
+    padding: 1rem;
+  }
+  .footer {
+    padding: 2rem 0;
+  }
+
+  /* Search Swap Button Mobile */
+  .swap-button {
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .swap-button:hover {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+
+  /* Flight Card Mobile Optimizations */
+  .flight-card {
+    padding: 1rem;
+  }
+  .flight-route {
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .route-path-container {
+    min-width: 60px;
+  }
+  .route-point {
+    min-width: auto;
+  }
+  .route-point .time {
+    font-size: 1.25rem;
+  }
+  .autocomplete-dropdown {
+    min-width: auto;
+  }
+
+  /* Prevent grid blowout */
+  .results-main, .results-sidebar {
+    min-width: 0;
+    width: 100%;
+  }
+  
+  .flight-card, .glass-card {
+    max-width: 100%;
+  }
+
+  /* Fix Action Buttons Alignment */
+  .action-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .flight-price-action {
+    padding-top: 1rem;
+    gap: 1rem;
+  }
+  .details-toggle, .select-btn {
+    white-space: nowrap;
+  }
+  .select-btn {
+    padding: 0.75rem 1rem;
+  }
+  
+  .airport-fields-group .search-field {
+    padding-right: 3.5rem;
+  }
+  
+  .traveler-dropdown {
+    background: white;
+    backdrop-filter: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  
+  .search-hero {
+    padding: 2rem 0 1.5rem;
+  }
+
+  /* Increase padding to prevent content hugging edges */
+  .flight-card, 
+  .price-graph-container,
+  .filter-sidebar {
+    padding: 1.25rem;
+  }
+  
+  .flight-route {
+    gap: 0.25rem;
+  }
+  
+  /* Allow path to shrink more to accommodate larger padding */
+  .route-path-container {
+    min-width: 40px;
+  }
+  
+  .route-point .time {
+    font-size: 1.125rem;
+  }
+  
+  .route-point .iata {
+    font-size: 0.75rem;
+  }
+  
+  .select-btn span {
+    display: none;
+  }
+  
+  .select-btn {
+    padding: 0.75rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .details-toggle {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .results-layout {
+    width: 100%;
+    overflow-x: hidden; 
+  }
+}
