@@ -32,6 +32,16 @@ export const mockFlights: Flight[] = Array.from({ length: 20 }).map((_, i) => {
     price: Math.floor(Math.random() * 500) + 200,
     currency: 'USD',
     date: '2026-01-20',
+    layovers: [],
+    segments: [
+      {
+        departure: { iata: 'BOM', time: `${departureHour.toString().padStart(2, '0')}:00` },
+        arrival: { iata: 'DXB', time: `${((departureHour + durationHours) % 24).toString().padStart(2, '0')}:30` },
+        carrier: airline.name,
+        flightNumber: `${airline.name.substring(0, 2).toUpperCase()}${Math.floor(Math.random() * 9000) + 1000}`,
+        duration: `${durationHours}h 30m`
+      }
+    ]
   };
 });
 
